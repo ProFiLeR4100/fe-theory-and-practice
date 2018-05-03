@@ -1,0 +1,42 @@
+.login-form {
+    @media screen and (min-width: 768px) {
+        width: 300px;
+        padding: 8px 0 0;
+    }
+    @media screen and (max-width: 767px) {
+        padding: 0 15px 0;
+    }
+}
+
+chat {
+    .chat {
+        @margin-top: 51px;
+        @padding-top: 20px;
+        @send-form-height: 45px;
+        @send-form-padding-top: 20px;
+
+        &__container {
+            margin-top: @margin-top;
+            padding-top: @padding-top;
+            height: calc(~"100vh - @{margin-top}");
+        }
+
+        &__messages {
+            @media screen and (min-width: 768px) {
+                height: 100%;
+            }
+
+            @media screen and (max-width: 767px) {
+                @offset: @margin-top + @padding-top + @send-form-height + @send-form-padding-top;
+                height: calc(~"100vh - @{offset}");
+                overflow-y: auto;
+            }
+        }
+
+        &__send-form {
+            @media screen and (max-width: 767px) {
+                padding-top: @send-form-padding-top;
+            }
+        }
+    }
+}

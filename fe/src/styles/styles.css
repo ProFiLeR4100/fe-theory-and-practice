@@ -1,0 +1,32 @@
+@media screen and (min-width: 768px) {
+  .login-form {
+    width: 300px;
+    padding: 8px 0 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .login-form {
+    padding: 0 15px 0;
+  }
+}
+chat .chat__container {
+  margin-top: 51px;
+  padding-top: 20px;
+  height: calc(100vh - 51px);
+}
+@media screen and (min-width: 768px) {
+  chat .chat__messages {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  chat .chat__messages {
+    height: calc(100vh - 136px);
+    overflow-y: auto;
+  }
+}
+@media screen and (max-width: 767px) {
+  chat .chat__send-form {
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="thumbnail">
+    <div class="caption">
+        <div class="row">
+            <div class="col-xs-8">
+                <h4 class="message__username" ng-bind="$ctrl.message.username"></h4>
+            </div>
+            <div class="col-xs-4 text-right">
+                <h6 class="message__timestamp" ng-bind="$ctrl.message.timestamp | date : 'H:mm:ss'"></h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p class="message__message"  ng-bind="$ctrl.message.message"></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Live Chat</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="input-group login-form">
+                        <span class="input-group-addon">@</span>
+                        <input class="form-control" placeholder="Username"
+                               ng-model="login" ng-disabled="$ctrl.signedIn">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"
+                                    ng-click="$ctrl.signIn(login)"
+                                    ng-if="!$ctrl.signedIn"
+                                    ng-disabled="!login">Sign In</button>
+                            <button class="btn btn-default" type="button"
+                                    ng-click="$ctrl.signOut()"
+                                    ng-if="$ctrl.signedIn">Sign Out</button>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container chat__container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 chat__messages">
+            <message ng-repeat="message in $ctrl.messages | orderBy:'-timestamp'" message="message"></message>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <div class="input-group hidden-md hidden-lg chat__send-form">
+                <input class="form-control" placeholder="Message"
+                       ng-model="message" ng-disabled="!$ctrl.signedIn">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"
+                            ng-click="$ctrl.sendMessage(message); message = ''"
+                            ng-disabled="!$ctrl.signedIn">Send</button>
+                </span>
+            </div>
+            <div class="hidden-xs hidden-sm chat__send-form">
+                <h3>Your message:</h3>
+                <textarea class="form-control" ng-model="message" ng-disabled="!$ctrl.signedIn"></textarea>
+                <br>
+                <button class="btn btn-default pull-right" type="button"
+                        ng-click="$ctrl.sendMessage(message); message = undefined"
+                        ng-disabled="!$ctrl.signedIn || !message">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
