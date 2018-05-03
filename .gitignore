@@ -1,0 +1,8 @@
+# Node.JS files
+node_modules
+
+# Builded sources 
+fe/build
+
+# Intermediate files
+src/styles/styles.css
